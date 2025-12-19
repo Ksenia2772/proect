@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Путешествия по миру </title>
+    <title>Путешествия по миру - Адаптивный сайт с видео</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
@@ -11,12 +11,12 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Навигация -->
+    <!-- НАВИГАЦИЯ -->
     <nav class="navbar">
         <div class="container navbar-container">
             <a href="#" class="logo">WorldTravel</a>
             
-            <!-- Десктопное меню (скрыто на мобильных) -->
+            <!-- Десктопное меню  -->
             <ul class="nav-menu nav-desktop">
                 <li class="nav-item">
                     <a href="#home" class="nav-link">Главная</a>
@@ -44,53 +44,80 @@
                 </li>
             </ul>
             
-            <!-- Кнопка мобильного меню (всегда видна на мобильных) -->
+            <!--  МЕНЮ на мобильных -->
             <button class="menu-toggle" id="menuToggle">
                 <i class="fas fa-bars"></i>
             </button>
-            
-            <!-- Мобильное меню (скрыто по умолчанию) -->
-            <div class="nav-mobile" id="navMobile">
-                <button class="close-menu" id="closeMenu">
+        </div>
+        
+        <!-- Мобильное меню (полностью скрыто, появляется справа при клике) -->
+        <div class="mobile-menu-overlay" id="mobileMenuOverlay"></div>
+        <div class="mobile-menu" id="mobileMenu">
+            <div class="mobile-menu-header">
+                <div class="mobile-menu-logo">WorldTravel</div>
+                <button class="mobile-menu-close" id="mobileMenuClose">
                     <i class="fas fa-times"></i>
                 </button>
-                
-                <ul class="nav-menu">
-                    <li class="nav-item">
-                        <a href="#home" class="nav-link">Главная</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#about" class="nav-link">О нас</a>
-                    </li>
-                    <li class="nav-item mobile-dropdown-item">
-                        <div class="mobile-dropdown-toggle nav-link">
+            </div>
+            
+            <ul class="mobile-nav-menu">
+                <li class="mobile-nav-item">
+                    <a href="#home" class="mobile-nav-link">
+                        <i class="fas fa-home"></i>
+                        <span>Главная</span>
+                    </a>
+                </li>
+                <li class="mobile-nav-item">
+                    <a href="#about" class="mobile-nav-link">
+                        <i class="fas fa-info-circle"></i>
+                        <span>О нас</span>
+                    </a>
+                </li>
+                <li class="mobile-nav-item mobile-nav-item-dropdown">
+                    <div class="mobile-nav-dropdown-toggle">
+                        <div class="mobile-nav-link">
+                            <i class="fas fa-globe"></i>
                             <span>Туры</span>
-                            <i class="fas fa-chevron-down"></i>
                         </div>
-                        <ul class="mobile-dropdown">
-                            <li><a href="#" class="dropdown-item">Европа</a></li>
-                            <li><a href="#" class="dropdown-item">Азия</a></li>
-                            <li><a href="#" class="dropdown-item">Америка</a></li>
-                            <li><a href="#" class="dropdown-item">Африка</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#faq" class="nav-link">Вопросы</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#partners" class="nav-link">Партнеры</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#contact" class="nav-link">Контакты</a>
-                    </li>
-                </ul>
-                
-                <a href="#contact" class="btn mobile-menu-btn">Связаться с нами</a>
+                        <i class="fas fa-chevron-down mobile-dropdown-arrow"></i>
+                    </div>
+                    <ul class="mobile-nav-dropdown">
+                        <li><a href="#" class="mobile-dropdown-link">Европа</a></li>
+                        <li><a href="#" class="mobile-dropdown-link">Азия</a></li>
+                        <li><a href="#" class="mobile-dropdown-link">Америка</a></li>
+                        <li><a href="#" class="mobile-dropdown-link">Африка</a></li>
+                    </ul>
+                </li>
+                <li class="mobile-nav-item">
+                    <a href="#faq" class="mobile-nav-link">
+                        <i class="fas fa-question-circle"></i>
+                        <span>Вопросы</span>
+                    </a>
+                </li>
+                <li class="mobile-nav-item">
+                    <a href="#partners" class="mobile-nav-link">
+                        <i class="fas fa-handshake"></i>
+                        <span>Партнеры</span>
+                    </a>
+                </li>
+                <li class="mobile-nav-item">
+                    <a href="#contact" class="mobile-nav-link">
+                        <i class="fas fa-envelope"></i>
+                        <span>Контакты</span>
+                    </a>
+                </li>
+            </ul>
+            
+            <div class="mobile-menu-footer">
+                <a href="#contact" class="btn btn-secondary mobile-contact-btn">
+                    <i class="fas fa-phone-alt"></i>
+                    <span>Связаться с нами</span>
+                </a>
             </div>
         </div>
     </nav>
     
-    <!-- Шапка с видео -->
+    <!-- ШАПКА С ВИДЕО -->
     <header id="home">
         <div class="video-container">
             <video class="video-background" autoplay muted loop playsinline>
@@ -109,7 +136,7 @@
         </div>
     </header>
     
-    <!-- Секция "О нас" -->
+    <!-- СЕКЦИЯ "О НАС" -->
     <section id="about">
         <div class="container">
             <h2>О нашей компании</h2>
@@ -127,7 +154,7 @@
         </div>
     </section>
     
-    <!-- Слайдер с турами -->
+    <!-- СЛАЙДЕР С ТУРАМИ -->
     <section id="tours" class="slider-section">
         <div class="container">
             <h2>Популярные туры</h2>
@@ -173,9 +200,7 @@
                     <i class="fas fa-chevron-left"></i>
                 </button>
                 
-                <div class="slider-dots" id="sliderDots">
-                    <!-- Точки для слайдера будут добавлены через JavaScript -->
-                </div>
+                <div class="slider-dots" id="sliderDots"></div>
                 
                 <button class="slider-next" id="sliderNext">
                     <i class="fas fa-chevron-right"></i>
@@ -184,7 +209,7 @@
         </div>
     </section>
     
-    <!-- Секция "Популярные вопросы" (FAQ) -->
+    <!-- СЕКЦИЯ "ПОПУЛЯРНЫЕ ВОПРОСЫ" -->
     <section id="faq" class="faq-section">
         <div class="container">
             <h2>Популярные вопросы</h2>
@@ -197,7 +222,7 @@
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="faq-answer">
-                        <p>Для оформления тура вам понадобится заграничный паспорт (срок действия не менее 6 месяцев после окончания поездки). В зависимости от страны назначения могут потребоваться виза, медицинская страховка и дополнительные документы. Наш менеджер подробно проконсультирует вас по всем вопросам.</p>
+                        <p>Для оформления тура вам понадобится заграничный паспорт (срок действия не менее 6 месяцев после окончания поездки). В зависимости от страны назначения могут потребоваться виза, медицинская страховка и дополнительные документы.</p>
                     </div>
                 </div>
                 
@@ -207,7 +232,7 @@
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="faq-answer">
-                        <p>Да, изменение дат поездки возможно, но зависит от условий конкретного отеля и авиакомпании. Обычно изменения возможны за дополнительную плату. Рекомендуем уточнять возможность изменений при бронировании.</p>
+                        <p>Да, изменение дат поездки возможно, но зависит от условий конкретного отеля и авиакомпании. Обычно изменения возможны за дополнительную плату.</p>
                     </div>
                 </div>
                 
@@ -217,7 +242,7 @@
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="faq-answer">
-                        <p>В стандартный тур входит: перелет, проживание в отеле, трансфер из аэропорта в отель и обратно, питание (зависит от типа тура), медицинская страховка. Экскурсии, визы и дополнительные услуги оплачиваются отдельно.</p>
+                        <p>В стандартный тур входит: перелет, проживание в отеле, трансфер из аэропорта в отель и обратно, питание (зависит от типа тура), медицинская страховка.</p>
                     </div>
                 </div>
                 
@@ -227,7 +252,7 @@
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="faq-answer">
-                        <p>Да, мы предоставляем скидки для детей до 12 лет. Размер скидки зависит от отеля и сезона. Дети до 2 лет обычно путешествуют бесплатно (без предоставления отдельного места).</p>
+                        <p>Да, мы предоставляем скидки для детей до 12 лет. Размер скидки зависит от отеля и сезона. Дети до 2 лет обычно путешествуют бесплатно.</p>
                     </div>
                 </div>
                 
@@ -237,14 +262,14 @@
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="faq-answer">
-                        <p>Вы можете оплатить тур онлайн банковской картой, через интернет-банкинг или наличными в нашем офисе. При бронировании требуется предоплата 30%, остальная сумма оплачивается за 14 дней до начала тура.</p>
+                        <p>Вы можете оплатить тур онлайн банковской картой, через интернет-банкинг или наличными в нашем офисе. При бронировании требуется предоплата 30%.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
     
-    <!-- Секция "Партнеры" -->
+    <!-- СЕКЦИЯ "ПАРТНЕРЫ" -->
     <section id="partners" class="partners-section">
         <div class="container">
             <h2>Наши партнеры</h2>
@@ -302,11 +327,11 @@
         </div>
     </section>
     
-    <!-- Форма обратной связи -->
+    <!-- ФОРМА ОБРАТНОЙ СВЯЗИ -->
     <section id="contact" class="form-section">
         <div class="container">
             <h2>Свяжитесь с нами</h2>
-            <p class="section-subtitle">Заполните форму ниже, и наш менеджер свяжется с вами в течение 24 часов для подбора идеального тура.</p>
+            <p class="section-subtitle">Заполните форму ниже, и наш менеджер свяжется с вами в течение 24 часов</p>
             
             <div class="form-container">
                 <form id="contactForm">
@@ -351,7 +376,7 @@
         </div>
     </section>
     
-    <!-- Футер -->
+    <!-- ФУТЕР -->
     <footer>
         <div class="container">
             <div class="footer-content">
