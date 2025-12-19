@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Путешествия по миру - Адаптивный сайт с видео</title>
+    <title>Путешествия по миру </title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
@@ -16,7 +16,7 @@
         <div class="container navbar-container">
             <a href="#" class="logo">WorldTravel</a>
             
-            <!-- Навигация для десктопа -->
+            <!-- Десктопное меню (скрыто на мобильных) -->
             <ul class="nav-menu nav-desktop">
                 <li class="nav-item">
                     <a href="#home" class="nav-link">Главная</a>
@@ -34,19 +34,22 @@
                     </ul>
                 </li>
                 <li class="nav-item">
-                    <a href="#gallery" class="nav-link">Галерея</a>
+                    <a href="#faq" class="nav-link">Вопросы</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#partners" class="nav-link">Партнеры</a>
                 </li>
                 <li class="nav-item">
                     <a href="#contact" class="nav-link">Контакты</a>
                 </li>
             </ul>
             
-            <!-- Кнопка мобильного меню -->
+            <!-- Кнопка мобильного меню (всегда видна на мобильных) -->
             <button class="menu-toggle" id="menuToggle">
                 <i class="fas fa-bars"></i>
             </button>
             
-            <!-- Мобильное меню -->
+            <!-- Мобильное меню (скрыто по умолчанию) -->
             <div class="nav-mobile" id="navMobile">
                 <button class="close-menu" id="closeMenu">
                     <i class="fas fa-times"></i>
@@ -72,7 +75,10 @@
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a href="#gallery" class="nav-link">Галерея</a>
+                        <a href="#faq" class="nav-link">Вопросы</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#partners" class="nav-link">Партнеры</a>
                     </li>
                     <li class="nav-item">
                         <a href="#contact" class="nav-link">Контакты</a>
@@ -89,7 +95,8 @@
         <div class="video-container">
             <video class="video-background" autoplay muted loop playsinline>
                 <source src="видео.mp4" type="video/mp4">
-                <img src="https://images.unsplash.com/photo-1488646953014-85cb44e25828?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" alt="Запасной фон">
+                <!-- Запасное онлайн видео -->
+                <source src="https://assets.mixkit.co/videos/preview/mixkit-traveling-over-a-road-in-the-desert-42966-large.mp4" type="video/mp4">
                 Ваш браузер не поддерживает видео тег.
             </video>
         </div>
@@ -177,11 +184,129 @@
         </div>
     </section>
     
+    <!-- Секция "Популярные вопросы" (FAQ) -->
+    <section id="faq" class="faq-section">
+        <div class="container">
+            <h2>Популярные вопросы</h2>
+            <p class="section-subtitle">Ответы на наиболее часто задаваемые вопросы о наших турах</p>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Какие документы нужны для оформления тура?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Для оформления тура вам понадобится заграничный паспорт (срок действия не менее 6 месяцев после окончания поездки). В зависимости от страны назначения могут потребоваться виза, медицинская страховка и дополнительные документы. Наш менеджер подробно проконсультирует вас по всем вопросам.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Можно ли изменить даты поездки после бронирования?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Да, изменение дат поездки возможно, но зависит от условий конкретного отеля и авиакомпании. Обычно изменения возможны за дополнительную плату. Рекомендуем уточнять возможность изменений при бронировании.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Что входит в стоимость тура?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>В стандартный тур входит: перелет, проживание в отеле, трансфер из аэропорта в отель и обратно, питание (зависит от типа тура), медицинская страховка. Экскурсии, визы и дополнительные услуги оплачиваются отдельно.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Есть ли скидки для детей?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Да, мы предоставляем скидки для детей до 12 лет. Размер скидки зависит от отеля и сезона. Дети до 2 лет обычно путешествуют бесплатно (без предоставления отдельного места).</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Как происходит оплата тура?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Вы можете оплатить тур онлайн банковской картой, через интернет-банкинг или наличными в нашем офисе. При бронировании требуется предоплата 30%, остальная сумма оплачивается за 14 дней до начала тура.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Секция "Партнеры" -->
+    <section id="partners" class="partners-section">
+        <div class="container">
+            <h2>Наши партнеры</h2>
+            <p class="section-subtitle">Мы сотрудничаем с лучшими компаниями в сфере туризма</p>
+            
+            <div class="partners-container">
+                <div class="partner-item">
+                    <div class="partner-logo">
+                        <i class="fas fa-plane"></i>
+                    </div>
+                    <h3>AeroTravel</h3>
+                    <p>Авиакомпания с рейсами по всему миру</p>
+                </div>
+                
+                <div class="partner-item">
+                    <div class="partner-logo">
+                        <i class="fas fa-hotel"></i>
+                    </div>
+                    <h3>Grand Hotels</h3>
+                    <p>Сеть отелей 5* в 50 странах мира</p>
+                </div>
+                
+                <div class="partner-item">
+                    <div class="partner-logo">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>SafeTravel Insurance</h3>
+                    <p>Страхование путешественников</p>
+                </div>
+                
+                <div class="partner-item">
+                    <div class="partner-logo">
+                        <i class="fas fa-car"></i>
+                    </div>
+                    <h3>EuroRent</h3>
+                    <p>Аренда автомобилей по всему миру</p>
+                </div>
+                
+                <div class="partner-item">
+                    <div class="partner-logo">
+                        <i class="fas fa-utensils"></i>
+                    </div>
+                    <h3>Gourmet Tours</h3>
+                    <p>Гастрономические экскурсии</p>
+                </div>
+                
+                <div class="partner-item">
+                    <div class="partner-logo">
+                        <i class="fas fa-camera"></i>
+                    </div>
+                    <h3>PhotoJourney</h3>
+                    <p>Фототуры и профессиональные гиды</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
     <!-- Форма обратной связи -->
     <section id="contact" class="form-section">
         <div class="container">
             <h2>Свяжитесь с нами</h2>
-            <p>Заполните форму ниже, и наш менеджер свяжется с вами в течение 24 часов для подбора идеального тура.</p>
+            <p class="section-subtitle">Заполните форму ниже, и наш менеджер свяжется с вами в течение 24 часов для подбора идеального тура.</p>
             
             <div class="form-container">
                 <form id="contactForm">
@@ -244,7 +369,7 @@
             </div>
             
             <div class="copyright">
-                &copy; 2023 WorldTravel. Все права защищены.
+                &copy; 2025 WorldTravel. Все права защищены.
             </div>
         </div>
     </footer>

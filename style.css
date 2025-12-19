@@ -1,3 +1,5 @@
+/* ========== MOBILE-FIRST СТИЛИ ========== */
+
 /* CSS Reset и базовые стили */
 * {
     margin: 0;
@@ -39,6 +41,8 @@ h1 {
 h2 {
     font-size: 1.8rem;
     color: var(--primary);
+    text-align: center;
+    margin-bottom: 1rem;
 }
 
 h3 {
@@ -109,10 +113,21 @@ section {
     padding: 4rem 0;
 }
 
+.section-subtitle {
+    text-align: center;
+    color: var(--gray);
+    margin-bottom: 3rem;
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 /* Шапка с видео */
 header {
     position: relative;
     height: 100vh;
+    min-height: 600px;
     overflow: hidden;
     display: flex;
     align-items: center;
@@ -121,14 +136,27 @@ header {
     color: white;
 }
 
-.video-background {
+.video-container {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    overflow: hidden;
+    z-index: -2;
+}
+
+.video-background {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
     z-index: -1;
+    object-fit: cover;
 }
 
 .video-overlay {
@@ -137,8 +165,8 @@ header {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.6);
-    z-index: 0;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.4) 100%);
+    z-index: -1;
 }
 
 .header-content {
@@ -151,14 +179,15 @@ header {
 .header-content h1 {
     font-size: 2.5rem;
     margin-bottom: 1.5rem;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
     color: white;
 }
 
 .header-content p {
     font-size: 1.2rem;
     margin-bottom: 2rem;
-    opacity: 0.9;
+    opacity: 0.95;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
 }
 
 /* Навигация */
@@ -188,7 +217,7 @@ header {
     z-index: 1001;
 }
 
-/* Навигация для десктопа */
+/* Десктопное меню - СКРЫТО на мобильных */
 .nav-desktop {
     display: none;
 }
@@ -251,8 +280,9 @@ header {
     transform: translateY(0);
 }
 
-/* Мобильное меню */
+/* Кнопка мобильного меню - ВСЕГДА ВИДНА на мобильных */
 .menu-toggle {
+    display: block;
     font-size: 1.5rem;
     color: var(--dark);
     cursor: pointer;
@@ -261,6 +291,7 @@ header {
     z-index: 1001;
 }
 
+/* Мобильное меню - СКРЫТО по умолчанию */
 .nav-mobile {
     position: fixed;
     top: 0;
@@ -269,16 +300,14 @@ header {
     height: 100%;
     background-color: white;
     z-index: 999;
-    display: flex;
+    display: none;
     flex-direction: column;
     padding: 5rem 2rem 2rem;
-    transform: translateX(-100%);
-    transition: var(--transition);
     overflow-y: auto;
 }
 
 .nav-mobile.active {
-    transform: translateX(0);
+    display: flex;
 }
 
 .nav-mobile .nav-menu {
@@ -461,6 +490,123 @@ header {
     background-color: var(--primary);
 }
 
+/* Секция "Популярные вопросы" (FAQ) */
+.faq-section {
+    background-color: var(--light);
+}
+
+.faq-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.faq-item {
+    background-color: white;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    transition: var(--transition);
+}
+
+.faq-item:hover {
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+}
+
+.faq-question {
+    padding: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    border-bottom: 1px solid transparent;
+}
+
+.faq-question h3 {
+    margin: 0;
+    font-size: 1.2rem;
+    color: var(--dark);
+    flex: 1;
+}
+
+.faq-question i {
+    color: var(--primary);
+    transition: var(--transition);
+}
+
+.faq-item.active .faq-question i {
+    transform: rotate(180deg);
+}
+
+.faq-answer {
+    padding: 0 1.5rem;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, padding 0.3s ease;
+}
+
+.faq-item.active .faq-answer {
+    padding: 0 1.5rem 1.5rem;
+    max-height: 500px;
+}
+
+.faq-answer p {
+    margin: 0;
+    color: var(--gray);
+    line-height: 1.6;
+}
+
+/* Секция "Партнеры" */
+.partners-section {
+    background-color: white;
+}
+
+.partners-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.partner-item {
+    background-color: var(--light);
+    border-radius: 8px;
+    padding: 2rem;
+    text-align: center;
+    transition: var(--transition);
+    box-shadow: var(--shadow);
+}
+
+.partner-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.partner-logo {
+    width: 80px;
+    height: 80px;
+    background-color: var(--primary);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+    font-size: 2rem;
+}
+
+.partner-item h3 {
+    margin-bottom: 0.5rem;
+    color: var(--primary);
+}
+
+.partner-item p {
+    color: var(--gray);
+    margin: 0;
+    font-size: 0.9rem;
+}
+
 /* Форма */
 .form-section {
     background-color: var(--light-gray);
@@ -528,14 +674,6 @@ header {
     display: block;
 }
 
-.form-loading {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    color: var(--primary);
-    margin-top: 1rem;
-}
-
 /* Футер */
 footer {
     background-color: var(--dark);
@@ -583,7 +721,7 @@ footer {
     padding-top: 1.5rem;
 }
 
-/* Медиа-запросы для планшетов */
+/* ========== ПЛАНШЕТЫ (min-width: 768px) ========== */
 @media (min-width: 768px) {
     h1 {
         font-size: 2.8rem;
@@ -606,13 +744,20 @@ footer {
         font-size: 1.4rem;
     }
     
+    /* Скрываем кнопку меню на планшетах/десктопах */
+    .menu-toggle {
+        display: none;
+    }
+    
+    /* Показываем десктопное меню */
     .nav-desktop {
         display: flex;
         gap: 2rem;
     }
     
-    .menu-toggle {
-        display: none;
+    /* Скрываем мобильное меню на планшетах/десктопах */
+    .nav-mobile {
+        display: none !important;
     }
     
     .about-content {
@@ -635,9 +780,17 @@ footer {
     .form-row .form-group {
         flex: 1;
     }
+    
+    .partners-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .faq-question h3 {
+        font-size: 1.3rem;
+    }
 }
 
-/* Медиа-запросы для десктопов */
+/* ========== ДЕСКТОПЫ (min-width: 992px) ========== */
 @media (min-width: 992px) {
     .container {
         max-width: 960px;
@@ -649,6 +802,14 @@ footer {
     
     .slider {
         height: 500px;
+    }
+    
+    .partners-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .faq-question h3 {
+        font-size: 1.4rem;
     }
 }
 
